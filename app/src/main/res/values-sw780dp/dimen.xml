@@ -20,7 +20,10 @@
 	<dimen name="_18sdp">46.80dp</dimen>
 	<dimen name="_19sdp">49.40dp</dimen>
 	<dimen name="_20sdp">52.00dp</dimen>
-	<dimen name="_40sdp">104.00dp</dimen>
-	<dimen name="_60sdp">156.00dp</dimen>
 	<dimen name="_80sdp">208.00dp</dimen>
+	<dimen name="fab_margin">48dp</dimen>
+	<dimen name="text_margin">48dp</dimen>
+	<dimen name="_60sdp">156.00dp</dimen>
+
+	<dimen name="_200sdp">520.00dp</dimen>
 </resources>

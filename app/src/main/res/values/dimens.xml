@@ -1,4 +1,8 @@
 <resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
     <dimen name="_1sdp">1.00dp</dimen>
     <dimen name="_2sdp">2.00dp</dimen>
     <dimen name="_3sdp">3.00dp</dimen>
@@ -22,4 +26,6 @@
     <dimen name="_40sdp">40.00dp</dimen>
     <dimen name="_60sdp">60.00dp</dimen>
     <dimen name="_80sdp">80.00dp</dimen>
+
+    <dimen name="_200sdp">200.00dp</dimen>
 </resources>
