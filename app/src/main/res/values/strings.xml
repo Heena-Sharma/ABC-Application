@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ABC App</string>
+    <string name="action_settings">Settings</string>
+    <string name="record_fragment_label">List Fragment</string>
+    <string name="search">Search...</string>
+    <string name="no_result_found">Sorry!!! \n No result found</string>
+    <string name="items">Items</string>
+</resources>
