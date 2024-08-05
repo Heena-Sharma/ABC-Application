@@ -15,7 +15,7 @@ fun BottomSheetContent(
         StatsBottomSheetDialog(
             onDismissRequest = { showBottomSheet.value = false }
         ) {
-            Stats(viewModel)
+            StatsView(viewModel)
         }
     }
 }

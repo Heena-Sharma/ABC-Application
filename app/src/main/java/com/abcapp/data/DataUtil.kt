@@ -1,5 +1,8 @@
 package com.abcapp.data
 
+import com.abcapp.domain.FundingProject
+import com.abcapp.domain.Project
+
 var dataSet = listOf(
     FundingProject(
         1,

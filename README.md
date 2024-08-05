@@ -38,19 +38,15 @@ implementation("androidx.compose.ui:ui:1.3.0")
   implementation("androidx.hilt:hilt-navigation-compose:1.0.0") // Replace with the latest version
 - [androidx.compose.ui:ui-util]: Provides utility functions and classes for Jetpack Compose, such as rememberSaveable for preserving state across configuration changes.
 - implementation("androidx.compose.ui:ui-util:1.3.0") // Replace with the latest version- 
-- [GSON]- Used for converting Json to POJO .
-'com.google.code.gson:gson:2.8.6'
 -[Lifecycles] - Create a UI that automatically responds to lifecycle events.
 'androidx.lifecycle.lifecycle-runtime-ktx-2.6.1'
 - [Coil]- for image loading
   io.coil-kt:coil-compose:2.4.0
 
 
-
-
 ### Screenshots###
 
--[screenview1](screenshots/Screenview1.png "A list of Data")
--[screenview2](screenshots/screenview2.png "Collapsed View ")
--[screenview3](screenshots/screenview3.png "Filter Data")
--[screenview4](screenshots/screenview3.png "Bottom sheet dialogue")
+-[screen view1](screenshots/screenview1.png "A list of Data")
+-[screen view2](screenshots/screenview2.png "Collapsed View ")
+-[screen view3](screenshots/screenview3.png "Filter Data")
+-[screen view4](screenshots/screenview3.png "Bottom sheet dialogue")

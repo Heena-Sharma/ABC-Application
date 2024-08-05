@@ -23,8 +23,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.abcapp.R
-import com.abcapp.data.Project
-import com.abcapp.ui.theme.Pink20
+import com.abcapp.domain.Project
+import com.abcapp.ui.theme.Pink10
 
 /**
  * Compose view for the list item
@@ -40,14 +40,14 @@ fun ListViewUI(item: Project) {
     ) {
         Row(
             modifier = Modifier
-                .padding(dimensionResource(id = R.dimen._8sdp)).background(Pink20),
+               .background(Pink10),
             verticalAlignment = Alignment.CenterVertically
         ) {
             AsyncImage(
                 model = item.mainImageURL,
                 contentDescription = "Image",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier
+                modifier = Modifier .padding(dimensionResource(id = R.dimen._8sdp))
                     .size(dimensionResource(id = R.dimen._60sdp))
                     .clip(RoundedCornerShape(dimensionResource(id = R.dimen._10sdp)))
             )

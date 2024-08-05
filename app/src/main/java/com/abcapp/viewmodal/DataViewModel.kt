@@ -1,11 +1,10 @@
 package  com.abcapp.viewmodal
-import android.icu.text.Transliterator.Position
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.abcapp.data.DataRepository
-import com.abcapp.data.FundingProject
-import com.abcapp.data.Project
+import com.abcapp.domain.FundingProject
+import com.abcapp.domain.Project
 import com.abcapp.data.Stats
+import com.abcapp.domain.FundingProjectRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
@@ -19,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DataViewModel @Inject constructor(
-    private val recordRepository: DataRepository
+    private val recordRepository: FundingProjectRepository
 ) : ViewModel() {
 
     private val _carouselList = MutableStateFlow<List<FundingProject>>(emptyList())
@@ -34,7 +33,7 @@ class DataViewModel @Inject constructor(
 
     private fun getData() {
         viewModelScope.launch {
-            recordRepository.getData().collect { data ->
+            recordRepository.getFundingProjects().collect { data ->
                 _carouselList.value = data
                 _filteredListData.value = data.firstOrNull()?.list ?: emptyList()
             }
@@ -60,18 +59,18 @@ class DataViewModel @Inject constructor(
     fun getStats(): Deferred<Stats> =
         CoroutineScope(Dispatchers.Default).async {
             val pageCount = _filteredListData.value.size
-            val charCounts = mutableMapOf<Char, Int>()
-
-            for (project in _filteredListData.value) {
-                for (char in project.title.lowercase()) {
-                    if (char.isLetter()) charCounts[char] = charCounts.getOrDefault(char, 0) + 1
-                }
-                for (char in project.shortDescription.lowercase()) {
-                    if (char.isLetter()) charCounts[char] = charCounts.getOrDefault(char, 0) + 1
-                }
+            val charCounts = _filteredListData.value.flatMap { project ->
+                (project.title + project.shortDescription).lowercase().toList()
             }
+                .filter { it.isLetter() }
+                .groupBy { it }
+                .mapValues { it.value.size }
 
             val top3CharsWithCounts = charCounts.entries.sortedByDescending { it.value }.take(3)
-            Stats(pageCount, top3CharsWithCounts.map { it.key }, top3CharsWithCounts)
+            Stats(
+                pageCount,
+                top3CharsWithCounts.map { it.key },
+                top3CharsWithCounts
+            )
         }
 }

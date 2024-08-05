@@ -27,10 +27,10 @@ import com.abcapp.ui.theme.Pink10
 import com.abcapp.viewmodal.DataViewModel
 
 /**
- * Display stats ob bottom sheet dialogue
+ * Display stats of bottom sheet dialogue
  */
 @Composable
-fun Stats(viewModel: DataViewModel = hiltViewModel()) {
+fun StatsView(viewModel: DataViewModel = hiltViewModel()) {
     val stats by produceState<Stats?>(initialValue = null, viewModel) {
         value = viewModel.getStats().await()
     }
@@ -70,7 +70,7 @@ fun Stats(viewModel: DataViewModel = hiltViewModel()) {
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen._20sdp)))
         } else {
             Text(
-                "No Data", textAlign = TextAlign.Center, modifier = Modifier
+                stringResource(R.string.no_data), textAlign = TextAlign.Center, modifier = Modifier
                     .fillMaxWidth()
                     .padding(
                         dimensionResource(id = R.dimen._20sdp)
