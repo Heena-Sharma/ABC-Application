@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.abc.app.data.Project
 import com.abc.app.databinding.ListItemBinding
+import com.abc.app.domain.Project
 
 class DataListAdapter(val isEmpty: (Boolean) -> Unit) : ListAdapter<Project, RecyclerView.ViewHolder>(
     RecordsDiffCallback()

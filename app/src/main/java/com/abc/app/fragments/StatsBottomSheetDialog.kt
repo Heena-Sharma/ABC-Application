@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.abc.app.adapters.BottomSheetAdapter
-import com.abc.app.data.Project
 import com.abc.app.databinding.BottomSheetLayoutBinding
 import com.abc.app.viewmodals.DataViewModel
+import com.abc.app.domain.Project
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

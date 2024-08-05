@@ -1,4 +1,4 @@
-package com.abc.app.data
+package com.abc.app.domain
 
 data class FundingProject(
     val id: Int,

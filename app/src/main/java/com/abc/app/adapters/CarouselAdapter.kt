@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-
-import com.abc.app.data.FundingProject
 import com.abc.app.databinding.ItemImageCarouselBinding
+import com.abc.app.domain.FundingProject
 
 class CarouselAdapter : ListAdapter<FundingProject, RecyclerView.ViewHolder>(CarouselDiffCallback()) {
 
